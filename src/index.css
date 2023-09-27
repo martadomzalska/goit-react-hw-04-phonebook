@@ -7,6 +7,60 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #161b33;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+   background: linear-gradient(
+    -45deg,
+    #ffffff,
+    #ffffff,
+    #edb6d5,
+    #adbdfa,
+    #e7aaf1,
+    #a29bff
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+  
+}
+.container {
+  position:sticky;
+  top:0px;
+  
+}
+h1 {
+  font-family: 'Prata', serif;
+  font-size: 70px;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 30px;
+ 
+}
+h2 {
+  font-family: 'Prata', serif;
+  font-size: 40px;
+  text-align: center;
+}
+
+input {
+  background-color: aliceblue;
+  border: none;
+  border-radius: 4px;
 }
 
 code {
