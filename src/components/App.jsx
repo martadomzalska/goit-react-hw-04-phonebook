@@ -15,17 +15,23 @@ export const App = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (contacts.length === 0) {
+     localStorage.removeItem('contacts')
+    } else {
+      localStorage.setItem('contacts', JSON.stringify(contacts))
+   }
+ }, [contacts])
+
   const handleSubmit = newContact => {
     const existingContact = contacts.find(
       contact => contact.name === newContact.name
     );
     if (existingContact) {
-      // alert(`${existingContact.name} is already in contacts`);
       Notiflix.Notify.failure(`${existingContact.name} is already in contacts`);
     } else {
       const updatedContacts = [...contacts, newContact];
       setContacts(updatedContacts);
-      localStorage.setItem('contacts', JSON.stringify(updatedContacts));
     }
   };
 
@@ -42,7 +48,6 @@ export const App = () => {
       contact => contact.id !== id
     );
     setContacts(updatedContacts);
-    localStorage.setItem('contacts', JSON.stringify(updatedContacts));
   };
 
   const filteredContacts = contacts.filter(contact =>
